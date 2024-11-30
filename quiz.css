@@ -1,0 +1,272 @@
+/* Global Reset and Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+    background-attachment: fixed;
+}
+
+/* Header */
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    color: blue;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-out;
+}
+
+h1:hover {
+    transform: scale(1.05);
+}
+
+/* Button Styles */
+button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: #4e5bcb;
+    border: 2px solid #4e5bcb;
+    border-radius: 50px;
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: all 0.3s ease-out;
+}
+
+button:hover {
+    background-color: #3851a2;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+button:active {
+    background-color: #2f3e7a;
+    transform: translateY(1px);
+}
+
+button:focus {
+    border-color: #ff5f5f;
+    box-shadow: 0 0 10px rgba(255, 95, 95, 0.8);
+}
+
+/* Quiz Container */
+#quiz-container {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.95);
+    animation: scaleUp 0.5s ease-out forwards;
+}
+
+@keyframes scaleUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+select {
+    padding: 10px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: rgb(93, 93, 255);
+    border-radius: 8px;
+    border: 2px solid #4e5bcb;
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:focus {
+    border-color: #ff5f5f;
+    box-shadow: 0 0 10px rgba(255, 95, 95, 0.6);
+}
+
+/* Progress Bar */
+#progress-bar-container {
+    width: 100%;
+    background: #ddd;
+    height: 10px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #4e5bcb, #ff5f5f);
+    border-radius: 8px;
+    transition: width 0.4s ease-out;
+}
+
+/* Question Container */
+#question-container {
+    margin-bottom: 20px;
+}
+
+#question-text {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: center;
+    color: #f0f0f0;
+    margin-bottom: 15px;
+}
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Option Buttons */
+.option-button {
+    padding: 10px 15px;
+    background-color: #2f3e7a;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.option-button:hover {
+    background-color: #4e5bcb;
+    transform: translateY(-3px);
+}
+
+.option-button:active {
+    background-color: #3851a2;
+    transform: translateY(1px);
+}
+
+.option-button.correct-answer {
+    background-color: #28a745;
+}
+
+.option-button.wrong-answer {
+    background-color: #dc3545;
+}
+
+/* Results Container */
+#quiz-results {
+    text-align: center;
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#quiz-results p {
+    font-size: 1.4rem;
+    margin: 10px 0;
+}
+
+#compliment {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4e5bcb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#score {
+    font-size: 1.6rem;
+    color: #ff9a8b;
+    font-weight: 600;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    #quiz-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    select,
+    .option-button,
+    button {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    #quiz-container {
+        padding: 10px;
+    }
+
+    .option-button {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}

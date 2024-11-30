@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lomi Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div id="quiz-container">
+
+        <!-- Part 1: Quiz Setup -->
+        <div id="quiz-setup" class="quiz-part">
+            <h1>Lomi Quiz!</h1>
+            <form id="quiz-form">
+                <label for="subject">Choose Subject</label>
+                <select id="subject" name="subject" required>
+                    <option value="math">Math</option>
+                    <option value="science">Science</option>
+                    <option value="history">History</option>
+                </select>
+
+                <label for="difficulty">Difficulty Level</label>
+                <select id="difficulty" name="difficulty" required>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <label for="time-limit">Select Time Limit (seconds)</label>
+                <select id="time-limit" name="time-limit" required>
+                    <option value="80">80 seconds</option>
+                    <option value="60">60 seconds</option>
+                    <option value="40">40 seconds</option>
+                    <option value="30">30 seconds</option>
+                </select>
+
+                <label for="sound-effects">Enable Sound Effects</label>
+                <select id="sound-effects" name="sound-effects" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <button type="button" id="start-quiz">Start Quiz</button>
+            </form>
+        </div>
+
+        <!-- Part 2: Quiz Questions -->
+        <div id="quiz-questions" class="quiz-part" style="display: none;">
+            <h1>Quiz Questions</h1>
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>            
+            <div id="question-container">
+                <p id="question-text">Question will appear here</p>
+                <div id="options-container"></div>
+            </div>
+            <button type="button" id="next-question">Next</button>
+            <button type="button" id="finish-quiz" style="display: none;">Finish</button>
+        </div>
+
+        <!-- Part 3: Quiz Results -->
+        <div id="quiz-results" class="quiz-part" style="display: none;">
+            <h1>Quiz Results</h1>
+            <p id="score">Your Score: </p>
+            <p id="correct-questions">Correct Questions: </p>
+            <p id="wrong-questions">Wrong Questions: </p>
+            <p id="compliment">Great Job!</p>
+            <button type="button" id="restart-quiz">Restart Quiz</button>
+        </div>
+
+    </div>
+
+    <script type="module" src="quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+header{
+    position: fixed;
+    top: 0%;
+    display: flex;
+    background:linear-gradient(160deg, rgb(28, 28, 28),rgb(90, 90, 90)) ;
+    width: 100%;
+    height: 90px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 1000;
+}
+header span{
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1px;
+}
+header span a{
+  font-size: 25px;
+  color: white;
+  font-weight: 500;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 3px;
+  text-shadow: 1px 3px 10px rgb(19, 19, 205);
+}
+header h2{
+  font-size:30px;
+  color: blue;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 2px 1px 1px blue;
+}
+#logo{
+  font-size:35px;
+  color: white;
+  text-shadow: 1px 1px 10px;
+}
+/* Navigation bar */
+nav {
+   padding-right: 10px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  font-size: 20px;
+  list-style-type: none;
+  font-weight: 900;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+nav ul a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 10px white;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+nav ul a::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+nav ul a:hover {
+  color: rgb(48, 48, 254); /* Hover color */
+  text-shadow: 1px 1px 10px rgb(48, 48, 254);
+}
+
+nav ul a:hover::after {
+  width: 100%;
+}
+#support{
+  padding: 10px 15px ;
+  color: white;
+  background-color: rgb(17, 208, 17);
+  font-weight: 900;
+  border-radius: 5px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 3px ;
+}
+@media (max-width:1068px){
+  nav{
+    display: none;
+  }
+  header{
+    height: 60px;
+  }
+}
+ /* Menu button for small screens */
+ .menu-toggle {
+  padding: 1px 10px;
+  color: white;
+  font-size: 25px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 1px 1px 10px rgb(87, 87, 247);
+  background-color: rgb(87, 87, 247);
+}
+.menu-toggle:active{
+color: black;
+}
+/* Sidebar with glass effect */
+.sidebar {
+  position: fixed;
+  top: 5%;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background: rgba(25, 25, 112, 0.9);
+  color: #F5F5F5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: 0.4s ease;
+  z-index: 999;
+  padding-top: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 20px;
+}
+
+.sidebar ul li a {
+  color: #F5F5F5;
+  text-decoration: none;
+  display: block;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 900;
+  text-align: center;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: rgba(0, 191, 255, 0.2);
+  color: #ff66b2 ;
+}
+
+/* Sidebar active state */
+.sidebar.active {
+left: 0;
+}
+.exit-btn {
+background: rgba(255, 255, 255, 0.2); /* Light transparency */
+border: 1px solid rgba(255, 255, 255, 0.3);
+backdrop-filter: blur(10px); /* Frosted glass effect */
+-webkit-backdrop-filter: blur(10px);
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 4px 12px rgba(255, 255, 255, 0.2); /* Subtle glow */
+border-radius: 12px;
+width: 50px;
+height: 50px;
+color:rgb(255, 104, 104);
+font-weight: 700;
+font-size: 1.8rem;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.exit-btn:active {
+background: rgba(255, 255, 255, 0.4); /* Brighter on hover */
+box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15), 0px 6px 16px rgba(255, 255, 255, 0.3); /* Enhanced glow on hover */
+box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 3px 8px rgba(255, 255, 255, 0.2); /* Subtle inset on click */
+}
+@media (min-width:1068px){
+   .menu-toggle{
+    display: none;
+   }  
+}
+
+.pdf-body{
+  background: linear-gradient(135deg, #b3e5fc 0%, #e1f5fe 100%);
+  min-height:600px;
+  padding: 20px;
+  padding-top: 30px;
+  text-align: center;
+  margin-top: 60px;
+}
+.heading{
+  padding-bottom: 20px;
+  white-space: nowrap;
+  color: rgb(18, 18, 255);
+  text-shadow: 4px 1px 1px white;
+  font-weight: 900;
+  letter-spacing: 1px;
+ }
+.pdf-search-container {
+  background:white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+  padding: 40px 25px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 30px;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pdf-search-container
+  h1 {
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 1px blue;
+}
+
+.selection-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 20px 0;
+}
+
+select {
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid #007bff;
+  font-size: 1.1rem;
+  outline: none;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" fill="%23007bff"><polygon points="0,0 10,0 5,5" /></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+select:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 12px rgba(0, 86, 179, 0.5);
+}
+
+.pdf-suggestions {
+  background: rgba(236, 232, 232, 0.95);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.pdf-suggestions p,
+.pdf-suggestions .pdf-item {
+  margin: 10px 0;
+  padding: 15px;
+  color: black;
+  background-color: rgba(240, 240, 240, 0.9);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pdf-suggestions .pdf-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.pdf-suggestions .pdf-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.pdf-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-item:hover {
+  transform: translateY(-5px);
+  background-color: rgba(240, 240, 240, 1);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-item:active {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .pdf-search-container {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  select {
+    font-size: 1rem;
+  }
+
+  .selection-container {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .pdf-suggestions {
+    max-height: 300px;
+  }
+
+  select {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width:768px){
+  .heading{
+    font-size: 3.2rem;
+  }
+}
+@media (min-width:768px){
+  .pdf-body{
+    margin-top: 60px;
+  }
+}
+
+.Entertainmenthub{
+  padding: 10px;
+  background-color: rgb(63, 59, 59);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px;
+}
+.Entertainmenthub h1{
+  font-size: 35px;
+  padding: 10px;
+  color:white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 10px;
+  animation: glow 5s ease-in-out infinite;
+}
+@keyframes glow{
+  0%{
+    text-shadow: 1px 1px 3px pink;
+  }
+  20%{
+    text-shadow: 1px 1px 2px blue;
+  }
+  40%{
+    text-shadow: 1px 1px 4px purple;
+  }
+  60%{
+    text-shadow: 1px 1px 6px blue;
+  }
+  80%{
+    text-shadow: 1px 1px 8px blue;
+  }
+  100%{
+    text-shadow: 1px 1px 10px purple;
+  }
+}
+.Entertainmenthub video{
+  width: 100%;
+  max-width: 800px;
+  height:600px;
+  border-radius: 10px;
+  border: 5px solid rgb(58, 58, 255);
+}
+.Entertainmenthub p{
+  font-size: 20px;
+  font-weight: 900;
+  padding: 10px;
+  color: rgb(199, 199, 199);
+  letter-spacing: 1px;
+}
+@media (max-width:768px){
+  .Entertainmenthub video{
+    height: 300px;
+  }
+}
+@media (min-width:768px){
+  .Entertainmenthub video{
+    height: 400px;
+  }
+}

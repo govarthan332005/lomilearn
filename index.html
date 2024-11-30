@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LomiThings</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=local_library" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header>
+        <span>
+            <a>Lomi</a>
+            <h2>Things</h2>
+            <span id="logo" class="material-symbols-outlined">
+                local_library
+                </span>
+        </span>
+        <nav>
+            <ul>
+                <li><a onclick="downloadpdfs()">Download Pdf's</a></li>
+                <li><a onclick="video()">Today's Video</a></li>
+                <li><a href="quiz.html" target="_blank">Online Quiz</a></li>
+                <li><a href="#">Free Course's</a></li>
+                <li><a href="#">Files Compressor</a></li>
+            </ul>
+        </nav>
+        <!--Navbar for Small screens-->
+    <button class="menu-toggle" id="menu-toggle"><span>☰</span></button>
+    </header>
+    <!-- Sidebar for small screens -->
+<aside class="sidebar" id="sidebar">
+    <ul>
+        <button class="exit-btn" onclick="closeNavToggler()">x</button>
+            <li><a onclick="downloadpdfs()" >Download Pdf's</a></li>
+            <li><a  onclick="video()" >Today's Video</a></li>
+            <li><a href="quiz.html" target="_blank">Online Quiz</a></li>
+            <li><a  onclick="quiz()">Free Course's</a></li>
+            <li><a  onclick="smoothScroll('hero')">Files Compressor</a></li>
+    </ul>
+</aside>
+
+<div id="home" class="pdf-body">
+
+  <h1 class="heading">
+     Welcome to LomiThings
+</h1>
+
+ <!-- pdf searcher -->
+ <div id="pdfs" class="pdf-search-container">
+    <h1>Download Pdf's</h1>
+
+    <!-- Dropdowns for Class and Subject Selection -->
+    <div class="selection-container">
+      <select id="classSelect" onchange="updatePdfSuggestions()">
+        <option value="">Select Education</option>
+        <option value="class10">Class 10</option>
+        <option value="class12">Class 12</option>
+        <!-- Add more classes as needed -->
+      </select>
+
+      <select id="subjectSelect" onchange="updatePdfSuggestions()">
+        <option value="">Select Subject</option>
+        <option value="math">Mathematics</option>
+        <option value="science">Science</option>
+        <option value="history">History</option>
+        <!-- Add more subjects as needed -->
+      </select>
+    </div>
+
+    <!-- PDF Suggestions Display Section -->
+    <div id="pdfSuggestions" class="pdf-suggestions">
+      <p>Select the class and subject to view available PDFs.</p>
+    </div>
+  </div>
+
+  <!--Entertainment Hub-->
+  <div id="hub" class="Entertainmenthub" style="display: none;" >
+       <h1>Today's Video</h1>
+       <div class="entertainmenthub-container">
+       <p id="description"></p>
+       <video id="video" controls></video>
+     </div>
+</div>
+
+
+</div>
+
+<section class="about-section">
+  <div class="overlay">
+      <div class="container">
+          <h1 class="title">About Us</h1>
+          <p class="intro">
+              Welcome to <span>Lomi things</span>, where we bring <strong>dreams to life</strong> with 
+              <strong>innovation</strong>, <strong>passion</strong>, and <strong>creativity</strong>.
+          </p>
+          <p class="description">
+              Our mission is to craft extraordinary experiences through cutting-edge technology, bold design, and a commitment to excellence.
+          </p>
+
+          <div class="features">
+              <div class="feature">
+                  <h3>⚡YOU WILL FIND</h3>
+                  <p>-From class 10th to BTech final year PDF's<br>
+                    -A video suggestion from our side to enhance your life<br>
+                    -online quiz to enhance your general knowledge<br>
+                    ...more coming...soon
+                  </p>
+              </div>
+              <div class="feature">
+                  <h3>💎 Tip</h3>
+                  <p>please enjoy in study after study you don't have
+                    time to enjoy.</p>
+              </div>
+              <div class="feature">
+                  <h3>🌟 future is coming</h3>
+                  <p>start learning new things and explore the wolrld in way
+                    that make you different from other's and also that makes you success.</p>
+              </div>
+          </div>
+          <a href="#contact" class="cta-button">Get in Touch</a>
+      </div>
+  </div>
+</section>
+   
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+   <script src="script.js"></script>
+  
+</body>
+</html>
